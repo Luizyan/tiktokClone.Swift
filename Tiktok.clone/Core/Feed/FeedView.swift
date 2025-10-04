@@ -10,16 +10,21 @@ import SwiftUI
 struct FeedView: View {
     var body: some View {
         ScrollView {
-            ForEach(0 ..< 10){ post in
-                Rectangle()
-                    .containerRelativeFrame([.horizontal, .vertical])
-                    .overlay{
-                        Text("Post \(post)")
-                            .foregroundColor(.white)
-                    }
+            LazyVStack(spacing: 0) {
+                ForEach(0 ..< 10){ post in
+                    Rectangle()
+                        .fill(Color.blue)
+                        .containerRelativeFrame([.horizontal, .vertical])
+                        .overlay{
+                            Text("Post \(post)")
+                                .foregroundColor(.white)
+                        }
+                }
             }
+            .scrollTargetLayout()
         }
-      
+        .scrollTargetBehavior(.paging)
+        .ignoresSafeArea()
     }
 }
 
