@@ -12,13 +12,7 @@ struct FeedView: View {
         ScrollView {
             LazyVStack(spacing: 0) {
                 ForEach(0 ..< 10){ post in
-                    Rectangle()
-                        .fill(Color.blue)
-                        .containerRelativeFrame([.horizontal, .vertical])
-                        .overlay{
-                            Text("Post \(post)")
-                                .foregroundColor(.white)
-                        }
+                    FeedCell(post: post)
                 }
             }
             .scrollTargetLayout()

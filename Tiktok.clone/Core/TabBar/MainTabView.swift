@@ -20,11 +20,13 @@ struct MainTabView: View {
                         Text("home")
                     }
                 }
+                .onAppear {selectedTab = 0}
+                .tag(0)
             
-            Text("Friends")
+            exploreView()
                 .tabItem{
                     VStack{
-                        Image(systemName: selectedTab == 1 ? "person.2.fill" :"person.2")
+                        Image(systemName: selectedTab == 1 ? "person.2.fill" : "person.2")
                             .environment(\.symbolVariants, selectedTab == 1 ? .fill : .none)
                         Text("Friend")
                     }
@@ -35,20 +37,20 @@ struct MainTabView: View {
             Text("Upload")
                 .tabItem{Image(systemName: "plus")}
             
-            Text("Notifications")
+            NotificationsViews()
                 .tabItem{
                     VStack{
-                        Image(systemName: selectedTab == 3 ? "heart.fill" :"heart")
+                        Image(systemName: selectedTab == 3 ? "heart.fill" : "heart")
                             .environment(\.symbolVariants, selectedTab == 3 ? .fill : .none)
-                        Text("")
+                        Text("inbox")
                     }
                 }
                 .onAppear {selectedTab = 3}
                 .tag(3)
-            Text("Notifications")
+            Text("profile")
                 .tabItem{
                     VStack{
-                        Image(systemName: selectedTab == 4 ? "person.fill" :"person")
+                        Image(systemName: selectedTab == 4 ? "person.fill" : "person")
                             .environment(\.symbolVariants, selectedTab == 4 ? .fill : .none)
                         Text("profile")
                     }
