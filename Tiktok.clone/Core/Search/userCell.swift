@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+// aqui criamos um perfil isolado pra integrar a classe explore view 
 struct userCell: View {
     var body: some View {
         HStack (spacing: 12) {

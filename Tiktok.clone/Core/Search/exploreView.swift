@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+// criando o explorer usando um loop 
 struct exploreView: View {
     var body: some View {
         NavigationStack {
